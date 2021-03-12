@@ -85,16 +85,16 @@ function vowelCount(str){
     for (let i = 0 ; i <= 4 ; i++){
         for (let j = 0 ; j < str; j++){
             if(str.charAt(j) == theVowels[i]){myCount++;}
-        }
+        };
         if (myCount > 0){vowelObject[theVowels[i]] = myCount;}
         myCount = 0;
-    }
-            
-        });
+    };
+    return vowelObject;        
+ }
 
-    }
+
    
-}
+
 
 /*
 Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled
@@ -104,7 +104,13 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) {}
+function doubleValuesWithMap(arr) {
+    let myResult = [];
+    for (i = 0; i < arr.length){
+        myResult.push(arr[i]*2);
+    }
+    return myResult 
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
@@ -115,7 +121,11 @@ Examples:
 */
 
 function valTimesIndex(arr){
-    
+    let myResult = []
+    for (i = 0 ; i < arr.length ; i++){
+        myResult.push(arr[i] * i);
+    };
+    return myResult
 }
 
 /*
@@ -126,7 +136,11 @@ Examples:
 */
 
 function extractKey(arr, key){
-    
+    let myResult = [];
+    for (let i = 0; i < arr.length ; i++){
+        myResult.push(arr[i][key]);
+    }
+   return myResult  
 }
 
 /*
@@ -137,7 +151,11 @@ Examples:
 */
 
 function extractFullName(arr){
-    
+    let myResult = [];
+    for (let i = 0 ; i < arr.length ; i++){
+        myResult.push(arr[i]["first"] + " " + arr[i]["last"]);
+    }
+    return myResult
 }
 
 /*
@@ -147,7 +165,13 @@ Examples:
     filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner') // [{first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Colt', last:"Steele", isCatOwner: true}]
 */
 
-function filterByValue(arr, key) {}
+function filterByValue(arr, key) {
+    let myResult = [];
+    for (let i = 0 ; i < arr.length ; i++){
+        if(arr[i].hasOwnProperty(key)){myResult.push(arr[i])}
+    }
+    return myResult
+}
 
 /*
 Write a function called find which accepts an array and a value and returns the first element in the array that has the same value as the second parameter or undefined if the value is not found in the array.
@@ -157,7 +181,9 @@ Examples:
     find([1,2,3,4,5], 10) // undefined
 */
 
-function find(arr, searchValue) {}
+function find(arr, searchValue) {
+    if (arr.includes(searchValue)){return searchValue} else {return undefined}
+}
 
 /*
 Write a function called findInObj which accepts an array of objects, a key, and some value to search for and returns the first found value in the array.
@@ -166,7 +192,9 @@ Examples:
     findInObj([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner',true) // {first: 'Tim', last:"Garcia", isCatOwner: true}
 */
 
-function findInObj(arr, key, searchValue) {}
+function findInObj(arr, key, searchValue) {
+    
+}
 
 /*
 Write a function called removeVowels which accepts a string and returns a new string with all of the vowels (both uppercased and lowercased) removed. Every character in the new string should be lowercased.
